@@ -1,0 +1,103 @@
+.home,
+.home * {
+  box-sizing: border-box;
+}
+.home {
+  background: transparent;
+  padding: 85px 40px 604px 39px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 912px;
+  position: relative;
+  overflow: hidden;
+}
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.home-boards {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.home-board {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 341px;
+  position: relative;
+}
+.board {
+  background: #d9d9d9;
+  padding: 14px 247px 15px 33px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 341px;
+  height: 48px;
+  position: relative;
+}
+.board-title {
+  color: #000000;
+  text-align: left;
+  font-family: "Gellix", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.07em;
+  font-weight: 400;
+  opacity: 0.75;
+  position: relative;
+}
+.home-tag {
+  color: #000000;
+  text-align: right;
+  font-family: "Gellix", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.07em;
+  font-weight: 400;
+  opacity: 0.25;
+  position: relative;
+  align-self: stretch;
+}
+.board2 {
+  background: #d9d9d9;
+  padding: 14px 244px 15px 33px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 341px;
+  height: 48px;
+  position: relative;
+}
+.board3 {
+  background: #d9d9d9;
+  padding: 14px 240px 15px 33px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 341px;
+  height: 48px;
+  position: relative;
+}

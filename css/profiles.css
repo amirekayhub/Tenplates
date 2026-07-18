@@ -1,0 +1,76 @@
+.profiles,
+.profiles * {
+  box-sizing: border-box;
+}
+.profiles {
+  background: transparent;
+  padding: 89px 205px 555px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 912px;
+  position: relative;
+  overflow: hidden;
+}
+.profiles-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.profile-user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 119px;
+  height: 111px;
+  position: relative;
+}
+.profile-title {
+  color: #444444;
+  text-align: left;
+  font-family: "Gellix", sans-serif;
+  font-size: 64px;
+  letter-spacing: -0.1em;
+  font-weight: 600;
+  position: relative;
+  align-self: stretch;
+}
+.profile-tag-text {
+  color: #000000;
+  text-align: left;
+  font-family: "Gellix", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.07em;
+  font-weight: 400;
+  opacity: 0.25;
+  position: relative;
+  align-self: stretch;
+}
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 185px;
+  position: relative;
+}
+.profile-content {
+  color: #000000;
+  text-align: left;
+  font-family: "Gellix", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.07em;
+  font-weight: 400;
+  opacity: 0.25;
+  position: relative;
+  align-self: stretch;
+}
