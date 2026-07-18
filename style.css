@@ -70,6 +70,36 @@ body {
   padding: 0 24px;
 }
 
+.header-text,
+.header-text * {
+  box-sizing: border-box;
+}
+.header-text {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.header-title {
+  color: #000000;
+  text-align: left;
+  font-family: "Gellix", sans-serif;
+  font-size: 36px;
+  letter-spacing: -0.1em;
+  font-weight: 600;
+  position: relative;
+}
+.header-title-badge {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
 /* Main Content */
 .main {
   flex: 1;
@@ -142,7 +172,48 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0 10px;
+  padding: 10px;
+}
+
+.nav-items,
+.nav-items * {
+  box-sizing: border-box;
+}
+.nav-items {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.nav-icon {
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 41px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.nav-title {
+  color: #000000;
+  text-align: left;
+  font-family: "Gellix", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.07em;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
 }
 
 /* Redirect Page (Desktop/Tablet) */
