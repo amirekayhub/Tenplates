@@ -6,53 +6,29 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
-    <title>Master Media</title>
+    <title>Header</title>
     <link
       rel="icon"
       type="image/png"
       href="https://i.postimg.cc/TPxd7803/css.png"
     />
-    <!-- Fonts — adjust path if font folder lives elsewhere -->
+
+    <!-- Fonts -->
     <link rel="stylesheet" href="../font.css" />
-    <!-- Layout system -->
+    <!-- Main Styles -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- ═══════════════════════════════════════════════
-         MOBILE LAYOUT — Header / Main / Footer shell
-         ═══════════════════════════════════════════════ -->
+    <!-- Mobile Layout -->
     <div class="mobile-layout">
-      <!-- ── HEADER ── -->
+      <!-- Header -->
       <header class="header">
-        <div class="header-wrapper">
-          <!-- Left: brand / profile -->
-          <div class="header-profile" id="header-profile">
-            <img
-              src="https://i.postimg.cc/j58dnVkD/Mtogan-header-pro-Icon.png"
-              alt="Profile"
-            />
-          </div>
-
-          <div class="header-title">Master Media</div>
-
-          <!-- Right: action icons -->
-          <div class="header-menu">
-            <!-- Toggle button -->
-            <div class="header-noti-btn" id="header-noti-btn">
-              <img
-                src="https://i.postimg.cc/2ShFWGzb/menu-bar-icon.png"
-                alt="Menu"
-                class="header-menu-icon"
-              />
-              <div class="noti-nav-dot" id="noti-nav-dot"></div>
-            </div>
-          </div>
-        </div>
+        <div class="header-wrapper"></div>
       </header>
 
-      <!-- ── MAIN — Home Block 1 only ── -->
+      <!-- Main Content -->
       <main class="main" id="main">
-        <!-- HOME PAGE ─ shown by default -->
+        <!-- Home Page -->
         <div class="home" id="page-home">
           <div class="home-wrapper">
             <!-- Block 1 -->
@@ -68,85 +44,17 @@
                 </div>
               </div>
             </div>
-            <!-- ↑ Add more blocks below as needed ↑ -->
           </div>
         </div>
-
-        <!-- OTHER PAGES — add your page partials here, hidden by default -->
-        <!-- <div class="page" id="page-feed" style="display:none;"> ... </div> -->
-        <!-- <div class="page" id="page-quest" style="display:none;"> ... </div> -->
       </main>
 
-      <!-- ── FOOTER NAV ── -->
+      <!-- Footer -->
       <footer class="footer">
-        <div class="footer-wrapper">
-          <!-- Home -->
-          <!-- <div class="nav-item active" data-nav="home">
-            <img
-              src="https://i.postimg.cc/SsQ818XM/Home-Bar.png"
-              alt="Home"
-              class="nav-icon"
-            />
-            <div class="nav-label">Home</div>
-          </div> -->
-
-          <!-- Feed -->
-          <!-- <div class="nav-item" data-nav="feed">
-            <div class="nav-icon-wrap" style="position: relative">
-              <img
-                src="https://i.postimg.cc/XJRZSDQ0/Mt-Feed-Icon.png"
-                alt="Feed"
-                class="nav-icon"
-              />
-              <div class="feed-nav-dot" id="feed-nav-dot"></div>
-            </div>
-            <div class="nav-label">Feed</div>
-          </div> -->
-
-          <!-- Quest -->
-          <!-- <div class="nav-item" data-nav="Quest">
-            <div class="nav-icon-wrap" style="position: relative">
-              <img
-                src="https://i.postimg.cc/261CZPjm/Mt-Admin-Bar-Icon-Quest.png"
-                alt="Quest"
-                class="nav-icon"
-              />
-              <div class="quest-nav-dot" id="quest-nav-dot"></div>
-            </div>
-            <div class="nav-label">Quest</div>
-          </div> -->
-
-          <!-- Block -->
-          <!-- <div class="nav-item" data-nav="Block">
-            <div class="nav-icon-wrap" style="position: relative">
-              <img
-                src="https://i.postimg.cc/xTYDWHSN/Mstogan-Block-Icon.png"
-                alt="Block"
-                class="nav-icon"
-              />
-              <div class="block-nav-dot" id="block-nav-dot"></div>
-            </div>
-            <div class="nav-label">Block</div>
-          </div> -->
-
-          <!-- App / About -->
-          <!-- <div class="nav-item" data-nav="about">
-            <img
-              src="https://i.postimg.cc/90dTcgJv/Mtogan-nav-app-Icon.png"
-              alt="App"
-              class="nav-icon"
-            />
-            <div class="nav-label">App</div>
-          </div> -->
-        </div>
+        <div class="footer-wrapper"></div>
       </footer>
     </div>
 
-    <!-- ══════════════════════════════════════════════
-         REDIRECT — shown on Tablet & Desktop
-         (index.css hides .mobile-layout above 768px
-         and shows this instead)
-         ══════════════════════════════════════════════ -->
+    <!-- Desktop Redirect -->
     <div class="redirect-page">
       <div class="redirect-container">
         <h1 class="redirect-title">504 Error</h1>
