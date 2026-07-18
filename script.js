@@ -25,13 +25,13 @@ const pageTemplates = {
             <div class="home-tag">@app</div>
           </div>
           <div class="home-board">
-            <div class="board2">
+            <div class="board">
               <div class="board-title">Header [1]</div>
             </div>
             <div class="home-tag">@kiraforex</div>
           </div>
           <div class="home-board">
-            <div class="board3">
+            <div class="board">
               <div class="board-title">Header [2]</div>
             </div>
             <div class="home-tag">@Untitled</div>
