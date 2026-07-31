@@ -50,6 +50,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100vh;
   min-height: 100vh;
   background: var(--bg-color);
 }
@@ -195,7 +196,8 @@ body {
   padding: 44px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  min-height: 0;
+  overflow-y: auto;
 }
 .main-wrapper {
   display: flex;
@@ -223,8 +225,11 @@ body {
   font-size: 36px;
   font-weight: 400;
   position: relative;
-  cursor: text;
+  cursor: pointer;
   outline: none;
+}
+.selected-menu-title.is-editing {
+  cursor: text;
 }
 .menu-toggle-icon {
   border-width: 1px;
@@ -256,6 +261,12 @@ body {
 .menu-panel.is-open {
   transform: translateX(0);
   pointer-events: auto;
+}
+.page-boards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
 }
 .page-board {
   background: #0a1b35;

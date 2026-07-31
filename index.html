@@ -35,7 +35,7 @@
           <div class="header">
             <div
               class="selected-menu-title"
-              contenteditable="true"
+              contenteditable="false"
               role="textbox"
               aria-label="Rename page"
               spellcheck="false"
@@ -47,17 +47,19 @@
               src="https://i.postimg.cc/7Zppx0c6/Menu-Toggle-Icon-coco.png"
             />
           </div>
-          <div class="page-board">
-            <div class="page-board-count">
-              <div class="page-board-number">1</div>
-            </div>
-            <div class="page-board-input">
-              <div class="page-board-name">
-                <input class="name" type="text" placeholder="Name" />
+          <div class="page-boards" id="page-boards">
+            <div class="page-board" data-board-number="1">
+              <div class="page-board-count">
+                <div class="page-board-number">1</div>
               </div>
-              <div class="page-board-username">
-                <span class="username-prefix">@</span>
-                <input class="username" type="text" placeholder="Username" />
+              <div class="page-board-input">
+                <div class="page-board-name">
+                  <input class="name" type="text" placeholder="Name" />
+                </div>
+                <div class="page-board-username">
+                  <span class="username-prefix">@</span>
+                  <input class="username" type="text" placeholder="Username" />
+                </div>
               </div>
             </div>
           </div>

@@ -49,8 +49,11 @@ body {
   font-size: 36px;
   font-weight: 500;
   position: relative;
-  cursor: text;
+  cursor: pointer;
   outline: none;
+}
+.brand-name.is-editing {
+  cursor: text;
 }
 .menu-items {
   display: flex;
