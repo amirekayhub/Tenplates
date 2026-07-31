@@ -1,95 +1,81 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Document metadata -->
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
-    <title>Header</title>
+    <title>Layout</title>
+
+    <!-- Favicon -->
     <link
       rel="icon"
       type="image/png"
       href="https://i.postimg.cc/TPxd7803/css.png"
     />
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="../font.css" />
-    <!-- Main Styles -->
+    <!-- Fonts and styles -->
+    <link rel="stylesheet" href="font.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/profiles.css" />
-    <link rel="stylesheet" href="css/viisuals.css" />
-    <link rel="stylesheet" href="css/ap.css" />
-    <link rel="stylesheet" href="css/store.css" />
+    <link rel="stylesheet" href="css/menu.css" />
   </head>
   <body>
-    <!-- Mobile Layout -->
+    <!-- Mobile layout wrapper -->
     <div class="mobile-layout">
-      <!-- Header -->
+      <!-- App header -->
       <header class="header">
-        <div class="header-wrapper">
-          <div class="header-text">
-            <div class="header-title">Header</div>
-            <img
-              class="header-title-badge"
-              src="https://i.ibb.co/gMWzggJc/b478195eafd3.png"
-            />
-          </div>
-        </div>
+        <div class="header-wrapper"></div>
       </header>
 
-      <!-- Main Content -->
-      <main class="main" id="main"></main>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer-wrapper">
-          <div class="nav-items">
-            <div class="nav-item" data-nav="home">
-              <img
-                class="nav-icon"
-                src="https://i.postimg.cc/XNf05SD0/nav-icon-home.png"
-              />
-              <div class="nav-title">Home</div>
+      <!-- Main content container -->
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          <div class="header">
+            <div
+              class="selected-menu-title"
+              contenteditable="true"
+              role="textbox"
+              aria-label="Rename page"
+              spellcheck="false"
+            >
+              One
             </div>
-            <div class="nav-item" data-nav="profiles">
-              <img
-                class="nav-icon"
-                src="https://i.postimg.cc/vZNRyQDS/nav-icon-profiles.png"
-              />
-              <div class="nav-title">Profiles</div>
+            <img
+              class="menu-toggle-icon"
+              src="https://i.postimg.cc/7Zppx0c6/Menu-Toggle-Icon-coco.png"
+            />
+          </div>
+          <div class="page-board">
+            <div class="page-board-count">
+              <div class="page-board-number">1</div>
             </div>
-            <div class="nav-item" data-nav="visuals">
-              <img
-                class="nav-icon"
-                src="https://i.postimg.cc/cCmjbWVs/nav-icon-visuals.png"
-              />
-              <div class="nav-title">Visuals</div>
-            </div>
-            <div class="nav-item" data-nav="ap">
-              <img
-                class="nav-icon"
-                src="https://i.postimg.cc/R0HYzKjk/nav-icon-ap.png"
-              />
-              <div class="nav-title">A&amp;P</div>
-            </div>
-            <div class="nav-item" data-nav="store">
-              <img
-                class="nav-icon"
-                src="https://i.postimg.cc/PJ23M4wW/nav-icon-store.png"
-              />
-              <div class="nav-title">Store</div>
+            <div class="page-board-input">
+              <div class="page-board-name">
+                <input class="name" type="text" placeholder="Name" />
+              </div>
+              <div class="page-board-username">
+                <span class="username-prefix">@</span>
+                <input class="username" type="text" placeholder="Username" />
+              </div>
             </div>
           </div>
         </div>
+      </main>
+
+      <!-- Bottom navigation bar -->
+      <footer class="footer">
+        <div class="footer-wrapper"></div>
       </footer>
     </div>
 
-    <!-- Desktop Redirect -->
+    <aside class="menu-panel" id="menu-panel" aria-hidden="true"></aside>
+
+    <!-- Desktop / tablet redirect view -->
     <div class="redirect-page">
       <div class="redirect-container">
-        <h1 class="redirect-title">504 Error</h1>
+        <h1 class="redirect-title">error</h1>
         <div class="redirect-text">
           <p class="redirect-subtext">
             This is Currently Unavailable on Tablet and Desktop
@@ -99,6 +85,7 @@
       </div>
     </div>
 
+    <!-- Application script -->
     <script src="script.js"></script>
   </body>
 </html>

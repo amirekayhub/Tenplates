@@ -1,0 +1,103 @@
+/* ========== Block 1 ========== */
+
+* {
+  font-family: "Myp", sans-serif;
+}
+
+body {
+  background-color: #031229;
+}
+
+.menu,
+.menu * {
+  box-sizing: border-box;
+}
+.menu {
+  background: #0a1b35;
+  padding: 109px 34px 106px 33px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+  height: 100vh;
+  position: relative;
+}
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 125px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.brand-name {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Myp", sans-serif;
+  letter-spacing: -2px;
+  font-size: 36px;
+  font-weight: 500;
+  position: relative;
+  cursor: text;
+  outline: none;
+}
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+}
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+}
+.menu-item:hover,
+.menu-item:focus {
+  opacity: 0.7;
+}
+.menu-icon {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 19.2307710647583%
+  );
+  border-image-slice: 1;
+  flex-shrink: 0;
+  width: 23px;
+  height: 23px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.menu-title {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Myp", sans-serif;
+  letter-spacing: -2px;
+  font-size: 36px;
+  font-weight: 400;
+  position: relative;
+}

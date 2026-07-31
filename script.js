@@ -1,119 +1,126 @@
-// Master Media - Layout Script
+const menuToggleIcon = document.querySelector(".menu-toggle-icon");
+const menuPanel = document.querySelector("#menu-panel");
+const selectedMenuTitle = document.querySelector(".selected-menu-title");
+const pageBoardNumber = document.querySelector(".page-board-number");
+const nameInput = document.querySelector(".name");
+const usernameInput = document.querySelector(".username");
+const storageKey = "cocomelon-state";
+const savedState = JSON.parse(localStorage.getItem(storageKey) || "{}");
+const pageTitles = savedState.pageTitles || {};
+const pageValues = new Map(Object.entries(savedState.pageValues || {}));
+let selectedPage = Number(savedState.selectedPage) || 1;
+let selectedMenuItem = null;
 
-function setViewportHeight() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-}
-
-setViewportHeight();
-window.addEventListener("resize", setViewportHeight);
-window.addEventListener("orientationchange", setViewportHeight);
-window.addEventListener("scroll", setViewportHeight);
-
-const main = document.querySelector(".main");
-const navItems = document.querySelectorAll(".nav-item");
-
-const pageTemplates = {
-  home: `
-    <div class="home">
-      <div class="home-wrapper">
-        <div class="home-boards">
-          <div class="home-board">
-            <div class="board">
-              <div class="board-title">Template</div>
-            </div>
-            <div class="home-tag">@app</div>
-          </div>
-          <div class="home-board">
-            <div class="board">
-              <div class="board-title">Header [1]</div>
-            </div>
-            <div class="home-tag">@kiraforex</div>
-          </div>
-          <div class="home-board">
-            <div class="board">
-              <div class="board-title">Header [2]</div>
-            </div>
-            <div class="home-tag">@Untitled</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `,
-  profiles: `
-    <div class="profiles">
-      <div class="profiles-wrapper">
-        <div class="profile-user">
-          <div class="profile-title">User</div>
-          <div class="profile-tag-text">Enter your usertag</div>
-        </div>
-        <div class="profile-text">
-          <div class="profile-title">Untitled</div>
-          <div class="profile-content">Enter your text</div>
-        </div>
-      </div>
-    </div>
-  `,
-  visuals: `
-    <div class="visuals">
-      <div class="visuals-wrapper">
-        <div class="visual-user">
-          <div class="visual-title">Untitled</div>
-          <div class="visual-board">
-            <div class="visual-frame"></div>
-            <div class="visual-action">
-              <img
-                class="visual-download-icon"
-                src="https://i.postimg.cc/Kj7rbSh3/visual-download-icon.png"
-              />
-              <div class="visual-download-text">Download</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `,
-  ap: `
-    <div class="ap">
-      <div class="ap-wrapper">
-        <div class="ap-user">
-          <div class="ap-title">Untitled</div>
-          <div class="ap-content">Enter your text</div>
-        </div>
-      </div>
-    </div>
-  `,
-  store: `
-    <div class="store">
-      <div class="store-wrapper">
-        <div class="store-user">
-          <div class="store-title">Untitled</div>
-          <div class="store-content">Enter your text</div>
-        </div>
-      </div>
-    </div>
-  `,
+const saveState = () => {
+  localStorage.setItem(
+    storageKey,
+    JSON.stringify({
+      brandName: menuPanel.querySelector(".brand-name")?.textContent,
+      pageTitles,
+      pageValues: Object.fromEntries(pageValues),
+      selectedPage,
+    }),
+  );
 };
 
-function setActiveNav(pageKey) {
-  navItems.forEach((navItem) => {
-    const isActive = navItem.getAttribute("data-nav") === pageKey;
-    navItem.classList.toggle("active", isActive);
+const saveCurrentPage = () => {
+  pageValues.set(String(selectedPage), {
+    name: nameInput.value,
+    username: usernameInput.value,
+  });
+  saveState();
+};
+
+if (menuToggleIcon && menuPanel) {
+  fetch("pages/menu.html")
+    .then((response) => response.text())
+    .then((menuMarkup) => {
+      menuPanel.innerHTML = menuMarkup;
+
+      const brandName = menuPanel.querySelector(".brand-name");
+      const menuItems = menuPanel.querySelectorAll(".menu-item");
+      selectedPage = Math.min(selectedPage, menuItems.length);
+      selectedMenuItem = menuItems[selectedPage - 1] || menuItems[0];
+
+      brandName.textContent =
+        savedState.brandName || brandName.textContent.trim();
+
+      menuItems.forEach((menuItem, index) => {
+        const pageNumber = index + 1;
+        const savedTitle = pageTitles[pageNumber];
+
+        if (savedTitle) {
+          menuItem.querySelector(".menu-title").textContent = savedTitle;
+        }
+      });
+
+      selectedMenuTitle.textContent =
+        selectedMenuItem.querySelector(".menu-title").textContent;
+      pageBoardNumber.textContent = selectedPage;
+      nameInput.value = pageValues.get(String(selectedPage))?.name || "";
+      usernameInput.value =
+        pageValues.get(String(selectedPage))?.username || "";
+
+      brandName.addEventListener("blur", () => {
+        if (!brandName.textContent.trim()) {
+          brandName.textContent = "cocomelon";
+        }
+        saveState();
+      });
+
+      brandName.addEventListener("input", saveState);
+
+      selectedMenuTitle.addEventListener("input", () => {
+        const renamedTitle = selectedMenuTitle.textContent.trim();
+
+        if (renamedTitle && selectedMenuItem) {
+          selectedMenuItem.querySelector(".menu-title").textContent =
+            renamedTitle;
+          pageTitles[selectedPage] = renamedTitle;
+          saveState();
+        }
+      });
+
+      selectedMenuTitle.addEventListener("blur", () => {
+        if (!selectedMenuTitle.textContent.trim() && selectedMenuItem) {
+          selectedMenuTitle.textContent =
+            selectedMenuItem.querySelector(".menu-title").textContent;
+          pageTitles[selectedPage] = selectedMenuTitle.textContent;
+          saveState();
+        }
+      });
+
+      nameInput.addEventListener("input", saveCurrentPage);
+      usernameInput.addEventListener("input", saveCurrentPage);
+
+      menuItems.forEach((menuItem, index) => {
+        menuItem.addEventListener("click", () => {
+          saveCurrentPage();
+
+          selectedPage = index + 1;
+          selectedMenuItem = menuItem;
+          const pageValue = pageValues.get(String(selectedPage)) || {
+            name: "",
+            username: "",
+          };
+
+          selectedMenuTitle.textContent =
+            menuItem.querySelector(".menu-title").textContent;
+          pageBoardNumber.textContent = selectedPage;
+          nameInput.value = pageValue.name;
+          usernameInput.value = pageValue.username;
+
+          menuPanel.classList.remove("is-open");
+          menuPanel.setAttribute("aria-hidden", "true");
+          saveState();
+        });
+      });
+
+      saveState();
+    });
+
+  menuToggleIcon.addEventListener("click", () => {
+    const isOpen = menuPanel.classList.toggle("is-open");
+    menuPanel.setAttribute("aria-hidden", String(!isOpen));
   });
 }
-
-function showPage(pageKey) {
-  if (!main) return;
-  main.innerHTML = pageTemplates[pageKey] || pageTemplates.home;
-  main.scrollTop = 0;
-  setActiveNav(pageKey);
-}
-
-navItems.forEach((navItem) => {
-  navItem.addEventListener("click", () => {
-    const pageKey = navItem.getAttribute("data-nav");
-    showPage(pageKey);
-  });
-});
-
-showPage("home");

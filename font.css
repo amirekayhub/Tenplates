@@ -1,4 +1,12 @@
-/* Load from GitHub CDN for reliability */
+@font-face {
+  font-family: "Myp";
+  src: url("font/myp.otf") format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Existing font declarations */
 
 /* Regular */
 @font-face {
@@ -84,5 +92,5 @@
 
 html,
 body {
-  font-family: "Gellix", Arial, Helvetica, sans-serif;
+  font-family: "Myp", sans-serif;
 }
