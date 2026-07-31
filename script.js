@@ -31,6 +31,12 @@ const addLongPressEditing = (element, onInput, onBlur) => {
       element.contentEditable = "true";
       element.classList.add("is-editing");
       element.focus();
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(element);
+      range.collapse(false);
+      selection.removeAllRanges();
+      selection.addRange(range);
     }, 600);
   });
   element.addEventListener("pointerup", stopLongPress);
